@@ -37,8 +37,8 @@
                                     <td scope="row">{{$loop->iteration}}</td>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->price}}</td>
+                                    <td>{{$item->description}}</td>
                                     <td>{{$item->quantity}}</td>
-                                    <td>{{$item->type}}</td>
                                     <td>
                                         <a href="{{ route('item.edit', $item->id)}}" class="btn btn-primary btn-sm">Edit</a>
     

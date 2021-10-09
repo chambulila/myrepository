@@ -10,7 +10,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    
+  
+   
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
     <style>
         ul li a, img {
          color: white;
@@ -110,18 +115,18 @@
                                         <div>
                                             <img src="icon\Screenshot (24).png" class="rounded-circle" alt="Cinque Terre" width="95" height="100"> 
                                       </div>
-                                        <li><a href="{{ url('/home') }}" class="nav-link scrollto"> <img src="icon\home-solid.svg" alt="" style="width: 25px">
+                                        <li><a href="{{ url('/home') }}" class="nav-link scrollto"> <i class="fas fa-home"></i>
                                            Home</a>
                                         </li>
-                                        <li><a href="{{ route('item.index') }}" class="nav-link scrollto"><img src="icon\user-circle-regular.svg" alt="" style="width: 25px"> 
+                                        <li><a href="{{ route('item.index') }}" class="nav-link scrollto"><i class="fa fa-times-circle"></i> 
                                                 <span>item </span></a></li>
-                                        <li><a href="{{ route('supplier.index') }}" class="nav-link scrollto"><img src="icon\user-circle-regular.svg" alt="" style="width: 25px">Suppliers</a></li>
+                                        <li><a href="{{ route('supplier.index') }}" class="nav-link scrollto"><i class="fa fa-user"></i> Suppliers</a></li>
                                         <!--i do sale moses-->
-                                        <li><a href="{{ route('sale.create') }}" class="nav-link scrollto"><img src="icon\coins-solid.svg" alt="" style="width: 25px">
+                                        <li><a href="{{ route('sale.create') }}" class="nav-link scrollto"><i class="fa fa-coins"></i>
                                                 <span>sales</span></a></li>
-                                        <li><a href="#" class="nav-link scrollto"><img src="icon\book-solid.svg" alt="" style="width: 25px" height="25px">
+                                        <li><a href="#" class="nav-link scrollto"><i class="fa fa-book"></i>
                                                 <span>Report</span></a></li>
-                                        <li><a href="{{ route('purchase.index') }}" class="nav-link scrollto"><img src="icon\dollar-sign-solid.svg" alt="" style="width:25px" height="29px" >
+                                        <li><a href="{{ route('purchase.index') }}" class="nav-link scrollto"><i class="fa fa-toggle-off"></i>
                                                 <span>Purchase</span></a></li>
                                     </ul>
                                 </nav><!-- .nav-menu -->
@@ -142,7 +147,12 @@
         </main>
     </div>
 
+    <script src="{{ asset('js/jquery.min.js') }}" ></script>
+    <script src="{{ asset('js/popper.min.js') }}" ></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}" ></script>
+    <script src="{{ asset('js/sweetalert2.js') }}" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
 </body>
 @yield('script')
 

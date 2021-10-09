@@ -43,7 +43,7 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        
+        // dd($request->all());
         
         DB::transaction(function() use ($request){
             $sales = new Sale;
@@ -76,8 +76,8 @@ class SaleController extends Controller
 
             $transaction = new Transaction();
             $transaction->user_id = auth()->user()->id;
-            $transaction->balance = $request->balance;
-            $transaction->paid_amount = $request->paid_amount;
+            $transaction->balance = $request->total_amount;
+            $transaction->paid_amount = $request->total_amount;
             $transaction->transact_amount = $SaleDetails->amount;
             $transaction->sale_id = $sale_id;
             $transaction->transact_date = date('Y-m-d');

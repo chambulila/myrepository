@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Type</label>
-                                    <input type="text" class="form-control" name="type" value="{{old('type')}}" placeholder="">
+                                    <input type="text" class="form-control" name="description" value="{{old('description')}}" placeholder="">
                                 </div>
                                 
                                 <div class="text-center">

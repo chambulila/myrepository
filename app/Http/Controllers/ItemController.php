@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Item;
+use App\SaleDetail;
 use App\Http\Controllers\ItemController;
 use Illuminate\Http\Request;
+use DB;
 
 class ItemController extends Controller
 {
@@ -20,8 +22,12 @@ class ItemController extends Controller
     public function index()
     {
         $items = Item::all();
+        $s = DB::select('select sum(amount) from sale_details as tot');
         
-        return view('item.index', compact('items'));
+       dd($s);
+  
+        
+        // return view('item.index', compact('items'));
     }
 
     /**
@@ -46,7 +52,7 @@ class ItemController extends Controller
             'name' => 'required',
             'price' => 'required',
             'quantity' => 'required',
-            'type' => 'required',
+            'description' => 'required',
             
         ]);
 
@@ -54,7 +60,7 @@ class ItemController extends Controller
             'name' => $request->name,
             'price' => $request->price,
             'quantity' => $request->quantity,
-            'type' => $request->type,
+            'description' => $request->description,
             
 
         ]);
@@ -99,14 +105,14 @@ class ItemController extends Controller
             'name' => 'required',
             'price' => 'required',
             'quantity' => 'required',
-            'type' => 'required',
+            'description' => 'required',
         ]);
 
         $update = Item::findOrFail($id);
         $update->name = $request->name;
         $update->price = $request->price;
         $update->quantity = $request->quantity;
-        $update->type = $request->type;
+        $update->description = $request->description;
         $update->save();
 
         return redirect()->back()->with('success', 'item updated!');
