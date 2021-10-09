@@ -64,14 +64,10 @@ class SaleController extends Controller
                 $SaleDetails->save();
 
                 $item = Item::where('id',$request->item_id )->get()->first();
-                if ($item->quantity < $request->item_id[$item_id]) {
-                    return redirect()->back()->with('sms', 'the quantity is low');
-                }else{
+
+                //to dercrement the amount of items sold 
                     $itemID=$request->item_id[$item_id];
-                    Item::find($itemID)->decrement('quantity', $request->quantity);
-                    // $update = Item::find($item_id);
-                    // $update->quantity -= $SaleDetails->amount($item_id);
-                }
+                    Item::find($itemID)->decrement('quantity', $request->quantity);  
             }
 
             $transaction = new Transaction();

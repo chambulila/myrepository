@@ -10,15 +10,19 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    
-  
-   
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
     <style>
-        ul li a, img {
-         color: white;
+        ul li a,
+        img {
+            color: white;
 
         }
 
@@ -34,7 +38,8 @@
             list-style: none;
             padding-top: 0%;
         }
-        .icon{
+
+        .icon {
             max-width: 30px;
             max-height: 30px;
         }
@@ -48,7 +53,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{-- {{ config('app.name', 'Laravel') }} --}}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -83,7 +88,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
+                                                                 document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -108,26 +113,33 @@
                     <div class="profile">
                         <div class="row">
                             <div class="col-2">
-                                
+
                                 <nav id="navbar" class="nav-menu navbar bg-dark">
-                                
+
                                     <ul>
                                         <div>
-                                            <img src="icon\Screenshot (24).png" class="rounded-circle" alt="Cinque Terre" width="95" height="100"> 
-                                      </div>
-                                        <li><a href="{{ url('/home') }}" class="nav-link scrollto"> <i class="fas fa-home"></i>
-                                           Home</a>
+                                            <img src="icon\Screenshot (24).png" class="rounded-circle"
+                                                alt="Cinque Terre" width="95" height="100">
+                                        </div>
+                                        <li><a href="{{ url('/home') }}" class="nav-link scrollto"> <i
+                                                    class="fas fa-home"></i>
+                                                Home</a>
                                         </li>
-                                        <li><a href="{{ route('item.index') }}" class="nav-link scrollto"><i class="fa fa-times-circle"></i> 
+                                        <li><a href="{{ route('item.index') }}" class="nav-link scrollto"><i
+                                                    class="fa fa-times-circle"></i>
                                                 <span>item </span></a></li>
-                                        <li><a href="{{ route('supplier.index') }}" class="nav-link scrollto"><i class="fa fa-user"></i> Suppliers</a></li>
+                                        <li><a href="{{ route('supplier.index') }}" class="nav-link scrollto"><i
+                                                    class="fa fa-user"></i> Suppliers</a></li>
                                         <!--i do sale moses-->
-                                        <li><a href="{{ route('sale.create') }}" class="nav-link scrollto"><i class="fa fa-coins"></i>
+                                        <li><a href="{{ route('sale.create') }}" class="nav-link scrollto"><i
+                                                    class="fa fa-coins"></i>
                                                 <span>sales</span></a></li>
                                         <li><a href="#" class="nav-link scrollto"><i class="fa fa-book"></i>
                                                 <span>Report</span></a></li>
-                                        <li><a href="{{ route('purchase.index') }}" class="nav-link scrollto"><i class="fa fa-toggle-off"></i>
+                                        <li><a href="{{ route('purchase.index') }}" class="nav-link scrollto"><i
+                                                    class="fa fa-toggle-off"></i>
                                                 <span>Purchase</span></a></li>
+                                   
                                     </ul>
                                 </nav><!-- .nav-menu -->
                             </div>
@@ -147,11 +159,13 @@
         </main>
     </div>
 
-    <script src="{{ asset('js/jquery.min.js') }}" ></script>
-    <script src="{{ asset('js/popper.min.js') }}" ></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}" ></script>
-    <script src="{{ asset('js/sweetalert2.js') }}" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/sweetalert2.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
 
 </body>
 @yield('script')

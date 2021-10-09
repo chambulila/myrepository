@@ -7,6 +7,7 @@ use App\SaleDetail;
 use App\Http\Controllers\ItemController;
 use Illuminate\Http\Request;
 use DB;
+use Carbon\Carbon;
 
 class ItemController extends Controller
 {
@@ -22,12 +23,12 @@ class ItemController extends Controller
     public function index()
     {
         $items = Item::all();
-        $s = DB::select('select sum(amount) from sale_details as tot');
+    //     $s = DB::select('select sum(amount) from sale_details as tot');
         
-       dd($s);
+    //    dd($s);
   
         
-        // return view('item.index', compact('items'));
+        return view('item.index', compact('items'));
     }
 
     /**

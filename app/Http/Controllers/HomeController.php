@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\SaleDetail;
-
+use Carbon\Carbon;
 class HomeController extends Controller
 {
     /**
@@ -24,7 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        return view('home');
+       $articles = \App\Item::where("created_at",">", Carbon::now()->subDays(10))->get();
+       $idadi = $articles->count('id');
+        return view('home', compact(['articles', 'idadi']));
+    }
+    public function recentAddedItem()
+    {
+        $items = \App\Item::where("created_at",">", Carbon::now()->subDays(10))->get();
+        return view('item.recentAddedItem', compact('items'));
     }
 }

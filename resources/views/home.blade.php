@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
         <div class="row justify-content-center">
 
@@ -8,7 +9,7 @@
             <div class="col-lg-3 col-xs-6">
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h1>345</h1>
+                        <h1>{{ \App\Saledetail::sum('amount') }}</h1>
                         <b>Total sales</b><br>
                     </div>
                     <div class="icon">
@@ -19,7 +20,7 @@
             <div class="col-lg-3 col-xs-6">
                 <div class=" small-box bg-info">
                     <div class="inner">
-                        <h1>100</h1>
+                        <h1>{{ \App\Purchase::sum('price') }}</h1>
                         <b>Total Purchases</b>
                     </div>
                     <div class="icon">
@@ -30,8 +31,8 @@
             <div class="col-lg-3 col-xs-6">
                 <div class=" small-box bg-warning">
                     <div class="inner">
-                        <h1>200</h1>
-                        <b>Recently +items</b>
+                       <h1>{{ $idadi }}</h1>
+                        <b><a href="{{ route('recentAddedItem') }}" class="added"> Recently +items </a></b>
                     </div>
                     <div class="icon">
                         <i class="fas fa-dolly"></i>

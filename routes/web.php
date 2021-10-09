@@ -13,33 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/', function () {
-    return view('welcome');
+    return view('Auth.login');
 });
 
-Route::get('/add', function () {
-    \App\Address::create([
-        'user_id' => '1',
-        'country' => 'india',
-        
-    ]);
-    \App\Address::create([
-        'user_id' => '2',
-        'country' => 'tanzania'
-    ]);
-    \App\Address::create([
-        'user_id' => '3',
-        'country' => 'kenya'
-    ]);
-    \App\Address::create([
-        'user_id' => '4',
-        'country' => 'kenya'
-    ]);
-});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/recentItem', 'HomeController@recentAddedItem')->name('recentAddedItem');
 Route::resource('/item', 'ItemController');
 Route::resource('/sale', 'SaleController');
 Route::resource('/sale_detail', 'Sale_detailController');
