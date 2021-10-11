@@ -24,11 +24,13 @@
                             <thead class="thead-inverse table-sm">
                                 <tr>
                                     <th>#</th>
-                                    <th>item Name</th>
-                                    <th>price</th>
-                                    <th>type</th>
-                                    <th>quantity</th>
-                                    <th>action</th>
+                                    <th>Item Name</th>
+                                    <th>Buying price</th>
+                                    <th> Selling price</th>
+                                    <th>Description</th>
+                                    <th>Quantity</th>
+                                    <th>Re-order level</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,9 +38,11 @@
                                 <tr>
                                     <td scope="row">{{$loop->iteration}}</td>
                                     <td>{{$item->name}}</td>
+                                    <td>{{ $item->buy_price }}</td>
                                     <td>{{$item->price}}</td>
                                     <td>{{$item->description}}</td>
                                     <td>{{$item->quantity}}</td>
+                                    <td>{{ $item->reorder }}</td>
                                     <td>
                                         <a href="{{ route('item.edit', $item->id)}}" class="btn btn-primary btn-sm">Edit</a>
     

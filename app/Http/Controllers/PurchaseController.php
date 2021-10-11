@@ -49,7 +49,6 @@ class PurchaseController extends Controller
         $request->validate([
             'Item_name' => 'required',
             'Price' => 'required',
-            'Date' => 'required',
             'Supplier_name' => 'required',
             'Supplier_contact' => 'required',
             'other_Cost' => 'required',
@@ -58,7 +57,6 @@ class PurchaseController extends Controller
         purchase::create([
             'Item_name' => $request->Item_name,
             'Price' => $request->Price,
-            'Date' => $request->Date,
             'Supplier_name' => $request->Supplier_name,
             'Supplier_contact' => $request->Supplier_contact,
             'other_Cost' => $request->other_Cost,
@@ -105,7 +103,6 @@ class PurchaseController extends Controller
         $request->validate([
             'Item_name' => 'required',
             'Price' => 'required',
-            'Date' => 'required',
             'Supplier_name' => 'required',
             'Supplier_contact' => 'required',
             'other_Cost' => 'required',
@@ -114,7 +111,6 @@ class PurchaseController extends Controller
         $update = Purchase::findOrFail($id);
         $update->Item_name = $request->Item_name;
         $update->Price = $request->Price;
-        $update->Date = $request->Date;
         $update->Supplier_name = $request->Supplier_name;
         $update->Supplier_contact = $request->Supplier_contact;
         $update->other_Cost = $request->other_Cost;

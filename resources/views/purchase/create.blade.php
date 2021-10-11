@@ -35,27 +35,24 @@
                                 
                                 
                                 <div class="form-group">
-                                    <label for="">Item_name</label>
+                                    <label for="">Item name</label>
                                     <input type="text" class="form-control" name="Item_name" value="{{old('Item_name')}}" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Price</label>
                                     <input type="text" class="form-control" name="Price" value="{{old('Price')}}" placeholder="">
                                 </div>
+                             
                                 <div class="form-group">
-                                    <label for="">Date</label>
-                                    <input type="Date" class="form-control" name="Date" value="{{old('Date')}}" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Supplier_name</label>
+                                    <label for="">Supplier name</label>
                                     <input type="text" class="form-control" name="Supplier_name" value="{{old('Supplier_name')}}" placeholder="">
                                 </div>
                                    <div class="form-group">
-                                    <label for="">Supplier_contact</label>
+                                    <label for="">Supplier contact</label>
                                     <input type="text" class="form-control" name="Supplier_contact" value="{{old('Supplier_contact')}}" placeholder="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">other_Cost</label>
+                                    <label for="">Other cost</label>
                                     <input type="text" class="form-control" name="other_Cost" value="{{old('other_Cost')}}" placeholder="">
                                 </div>
                                 <div class="text-center">

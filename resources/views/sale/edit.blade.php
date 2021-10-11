@@ -5,12 +5,12 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Edit Purchase') }}
-                    <a class="btn btn-info float-right" href="{{ route('purchase.index')}}"> Back</a>
+                <div class="card-header">{{ __('Edit Sales') }}
+                    <a class="btn btn-info float-right" href="{{ route('sale.index')}}"> Back</a>
                 </div>
                 <div class="card-body">
 
-                    <form action="{{ route('purchase.update', $purchase->id)}}" method="POST">
+                    <form action="{{ route('sale.update', $SaleDetails->id)}}" method="POST">
                         @csrf
                         @method('PATCH')
                         <div class="row">
@@ -34,27 +34,22 @@
                                 </div>
                                 @endif
 
-                                
+                               
                                 <div class="form-group">
-                                    <label for="">Item name</label>
-                                    <input type="text" class="form-control" name="Item_name" value="{{  $purchase->Item_name}}" placeholder="">
+                                    <label for="">Item</label>
+                                    <input type="text" class="form-control" name="item" value="{{  $SaleDetails->item }}" placeholder="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Price</label>
-                                    <input type="text" class="form-control" name="Price" value="{{ $purchase->Price }}" placeholder="">
+                                    <label for="">SQuantity</label>
+                                    <input type="text" class="form-control" name="quantity" value="{{ $SaleDetails->quantity }}" placeholder="">
                                 </div>
-                             
-                                 <div class="form-group">
-                                    <label for="">Supplier name</label>
-                                    <input type="text" class="form-control" name="Supplier_name" value="{{ $purchase->Supplier_name }}" placeholder="">
+                                <div class="form-group">
+                                    <label for="">date</label>
+                                    <input type="text" class="form-control" name="date" value="{{ $SaleDetails->date}}" placeholder="">
                                 </div>
-                                 <div class="form-group">
-                                    <label for="">Supplier contact</label>
-                                    <input type="text" class="form-control" name="Supplier_contact" value="{{ $purchase->Supplier_contact }}" placeholder="">
-                                </div>
-                                 <div class="form-group">
-                                    <label for=""> Other costs</label>
-                                    <input type="text" class="form-control" name="other_Cost" value="{{ $purchase->other_Cost }}" placeholder="">
+                                <div class="form-group">
+                                    <label for="">Customer</label>
+                                    <input type="text" class="form-control" name="customer" value="{{ $SaleDetails->customer }}" placeholder="">
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">Save</button>

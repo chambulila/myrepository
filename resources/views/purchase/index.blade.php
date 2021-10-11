@@ -25,12 +25,12 @@
                                 <tr>
                                     <th>#</th>
                                    
-                                    <th>Item_name</th>
+                                    <th>Item name</th>
                                     <th>Price</th>
                                     <th>Date</th>
-                                    <th>Supplier_name</th>
-                                    <th>Supplier_contact</th>
-                                    <th>other_Cost</th>
+                                    <th>Supplier name</th>
+                                    <th>Supplier contact</th>
+                                    <th>Other costs</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,7 +40,7 @@
                                     
                                     <td>{{$purchase->Item_name}}</td>
                                     <td>{{$purchase->Price}}</td>
-                                    <td>{{$purchase->Date}}</td>
+                                    <td>{{$purchase->created_at}}</td>
                                     <td>{{$purchase->Supplier_name}}</td>
                                     <td>{{$purchase->Supplier_contact}}</td>
                                     <td>{{$purchase->other_Cost}}</td>

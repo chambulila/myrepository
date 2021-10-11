@@ -40,7 +40,11 @@
                                     <input type="text" class="form-control" name="name" value="{{ $item->name }}" placeholder="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Price</label>
+                                    <label for=""> Buying Price</label>
+                                    <input type="text" class="form-control" name="buy_price" value="{{  $item->buy_price }}" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label for=""> Selling Price</label>
                                     <input type="number" class="form-control" name="price" value="{{  $item->price }}" placeholder="">
                                 </div>
                                 <div class="form-group">
@@ -48,8 +52,12 @@
                                     <input type="number" class="form-control" name="quantity" value="{{ $item->quantity }}" placeholder="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Type</label>
-                                    <input type="text" class="form-control" name="type" value="{{ $item->type }}" placeholder="">
+                                    <label for="">Description</label>
+                                    <input type="text" class="form-control" name="description" value="{{ $item->description }}" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Re-order level</label>
+                                    <input type="text" class="form-control" name="reorder" value="{{old('reorder')}}" placeholder="">
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">Save</button>

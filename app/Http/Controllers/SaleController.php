@@ -11,6 +11,10 @@ use App\Transaction;
 
 class SaleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -20,6 +24,8 @@ class SaleController extends Controller
     {
         $sales = Sale::all();
         $SaleDetails = SaleDetail::all();
+        // $SaleDetails = DB::select('select * from sale_details left join items on items.id = sale_details.item_id');
+        
         return view('sale.index', compact(['sales', 'SaleDetails']));
     }
 
@@ -113,7 +119,9 @@ class SaleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $SaleDetails =  Sale::find($id);
+
+        return view('sale.edit', compact('SaleDetails'));
     }
 
     /**
@@ -152,7 +160,7 @@ class SaleController extends Controller
      */
     public function destroy($id)
     {
-        Sale::find($id)->delete();
+        Sale::all($id)->delete();
 
         return response(['status' => true, 'message' => 'Sales deleted!']);
     }

@@ -24,20 +24,24 @@
                             <tr>
                                 <th>#</th>
                                 <th>Item</th>
-                                <th>SQuantity</th>
-                                <th>Date</th>
-                                <th>Customer</th>
+                                <th>Quantity of items</th>
+                                <th>Price</th>
+                                <th>Discount</th>
+                                <th>Sold amount</th>
+                                <th>Date of issue</th>
                                 <th>Action</th>
-                            </tr>
+                            </tr> 
                         </thead>
                         <tbody>
                             @foreach ($SaleDetails as $SaleDetail)
                             <tr>
                                 <td scope="row">{{$loop->iteration}}</td>
-                                <td>{{$SaleDetail->unitprice}}</td>
+                                <td>{{$SaleDetail->name}}</td>
                                 <td>{{$SaleDetail->quantity}}</td>
+                                <td>{{ $SaleDetail->unitprice }}</td>
                                 <td>{{$SaleDetail->discount}}</td>
                                 <td>{{$SaleDetail->amount}}</td>
+                                <td>{{$SaleDetail->created_at}}</td>
                                 <td>
                                     <a href="{{ route('sale.edit', $SaleDetail->id)}}" class="btn btn-primary btn-sm">Edit</a>
 

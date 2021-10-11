@@ -1,14 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
-        <div class="float-right">
-            <a href="{{ route('sale.index') }}" class="btn btn-secondary">Back</a>
-        </div>
+       
         <div class="row">
+            <div>
+                <a href="{{ route('sale.index') }}" class="btn btn-secondary float-right">Back</a>
+            </div>
+           <div class="col-10">
+               
             <table class="table table-bordered table-hover col-10">
                 <thead>
-                    <tr class="bg-dark">
+                    <tr style="background-color: white">
                         <th>#</th>
                         <th>name</th>
                         <th>qty</th>
@@ -37,21 +41,21 @@
                                     @foreach ($items as $item)
 
                                         <option data-price="{{ $item->price }}" value="{{ $item->id }}">
-                                            {{ $item->name }}</option>
+                                            {{ $item->name }} {{ $item->quantity }}</option>
                                     @endforeach
                                 </select>
                             </td>
 
 
                             <td>
-                                <input type="number" name="quantity" id="quantity" class="form-control quantity ">
+                                <input type="number" name="quantity" min="1" id="quantity" class="form-control quantity ">
                             </td>
                             <td>
-                                <input type="number" name="price" id="price" class="form-control price">
+                                <input type="number" name="price" id="price" min="1" class="form-control price">
                             </td>
 
                             <td>
-                                <input type="number" name="discount" id="discount" class="form-control discount">
+                                <input type="number" name="discount" max="50" id="discount" class="form-control discount">
                             </td>
                             <td>
                                 <input type="text" name="total_amount" id="total_amount" class="form-control total_amount">
@@ -61,9 +65,10 @@
                         </tr>
                     </tbody>
             </table>
+           </div>
             <div class="col-2">
                 <div class="card">
-                    <div class="card-header  bg-dark">
+                    <div class="card-header" style="background-color: white">
                         <strong>Total <b class="total">0.00</b> </strong>
                     </div>
                     <div class="card-body">

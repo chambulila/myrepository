@@ -20,18 +20,20 @@
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
     <style>
-        ul li a,
-        img {
-            color: white;
-
+        #bodyy{
+            background: rgb(238, 240, 206);
         }
-
-        #navbar {
-            position: fixed;
+        #navbar{
+            
             min-height: 100%;
             padding-top: 0px;
             margin-top: 0%;
+            background-color: rgb(12, 12, 12);
 
+        }
+        #footerr{
+            glyph-orientation-vertical: 100turn;
+            background-color: rgba(7, 7, 7, 0.959);
         }
 
         #home {
@@ -43,15 +45,21 @@
             max-width: 30px;
             max-height: 30px;
         }
+        #h11{
+            color: rgb(170, 112, 25);
+        }
 
     </style>
 
 </head>
 
-<body>
+<body id="bodyy">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+        
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
+            
+            <div class="container position-static">
+                <h1><marquee behavior="slide" direction="vertical" id="h11"> Sales and Inventory Management System</marquee> </h1>
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Laravel') }} --}}
                 </a>
@@ -112,9 +120,9 @@
 
                     <div class="profile">
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-2" >
 
-                                <nav id="navbar" class="nav-menu navbar bg-dark">
+                                <nav id="navbar" class="nav-menu navbar">
 
                                     <ul>
                                         <div>
@@ -126,19 +134,24 @@
                                                 Home</a>
                                         </li>
                                         <li><a href="{{ route('item.index') }}" class="nav-link scrollto"><i
-                                                    class="fa fa-times-circle"></i>
+                                                    class="fa fa-pallet"></i>
                                                 <span>item </span></a></li>
                                         <li><a href="{{ route('supplier.index') }}" class="nav-link scrollto"><i
                                                     class="fa fa-user"></i> Suppliers</a></li>
                                         <!--i do sale moses-->
-                                        <li><a href="{{ route('sale.create') }}" class="nav-link scrollto"><i
+                                        <li><a href="{{ route('sale.index') }}" class="nav-link scrollto"><i
                                                     class="fa fa-coins"></i>
                                                 <span>sales</span></a></li>
                                         <li><a href="#" class="nav-link scrollto"><i class="fa fa-book"></i>
                                                 <span>Report</span></a></li>
+                                       
                                         <li><a href="{{ route('purchase.index') }}" class="nav-link scrollto"><i
                                                     class="fa fa-toggle-off"></i>
                                                 <span>Purchase</span></a></li>
+
+                                                <li>
+                                                    <a href="{{ route('register') }}" style="text-decoration: none"><i class="fa fa-users"></i><span>Add user</span></a>
+                                                </li> 
                                    
                                     </ul>
                                 </nav><!-- .nav-menu -->
@@ -151,14 +164,16 @@
                             </div>
 
                         </div>
-
+                    
                     </div>
-
-
+                    <div id="footerr">
+            
+                        @include('layouts.footer')
+                    </div>
             </header><!-- End Header -->
+        
         </main>
     </div>
-
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>

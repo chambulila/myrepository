@@ -8,6 +8,7 @@ use App\Http\Controllers\ItemController;
 use Illuminate\Http\Request;
 use DB;
 use Carbon\Carbon;
+use Session;
 
 class ItemController extends Controller
 {
@@ -51,22 +52,26 @@ class ItemController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'buy_price'=> 'required',
             'price' => 'required',
             'quantity' => 'required',
             'description' => 'required',
+            'reorder' => 'required',
             
         ]);
 
          Item::create([
             'name' => $request->name,
+            'buy_price' => $request->buy_price,
             'price' => $request->price,
             'quantity' => $request->quantity,
             'description' => $request->description,
-            
+            'reorder' => $request->reorder,
 
         ]);
 
-        return redirect()->back()->with('success', 'item saved!');
+        Session::flash('success', 'well, data saved successfully');
+        return redirect()->back();
     }
 
     /**
@@ -104,18 +109,21 @@ class ItemController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'buy_price' => 'required',
             'price' => 'required',
             'quantity' => 'required',
             'description' => 'required',
+            'reorder' => 'required',
         ]);
 
         $update = Item::findOrFail($id);
         $update->name = $request->name;
+        $update->buy_price = $request->buy_price;
         $update->price = $request->price;
         $update->quantity = $request->quantity;
         $update->description = $request->description;
+        $update->reorder = $request->reorder;
         $update->save();
-
         return redirect()->back()->with('success', 'item updated!');
     }
 

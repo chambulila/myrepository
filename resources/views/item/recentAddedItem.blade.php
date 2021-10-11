@@ -3,7 +3,8 @@
 
 <div class="container">
     <div class="row">
-        <table class="table table-bordered table-hover">
+        <a href="/home"><h6  class="btn-sm btn btn-info float-right">Back</h6></a>
+        <table class="table table-bordered table-hover table-striped">
             <thead>
                 <tr class="bg-secondary">
                     <th>#</th>

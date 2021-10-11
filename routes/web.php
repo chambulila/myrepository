@@ -27,8 +27,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/recentItem', 'HomeController@recentAddedItem')->name('recentAddedItem');
 Route::resource('/item', 'ItemController');
 Route::resource('/sale', 'SaleController');
-Route::resource('/sale_detail', 'Sale_detailController');
-Route::resource('/transaction', 'TransactionController');
 Route::resource('/supplier', 'SupplierController');
 Route::resource('/purchase', 'PurchaseController');
 Route::get('/a', 'SupplierController@a')->name('a');

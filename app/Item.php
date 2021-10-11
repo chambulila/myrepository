@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
      protected $fillable = [
-        'name', 'quantity', 'price', 'reoder', 'description', 'brand'
+        'name', 'quantity', 'buy_price', 'price', 'reoder', 'description', 'brand'
     ];
 
-    public function saledetail()
+    public function sales()
     {
-        return $this->hasMany('App\SaleDetail');
+        return $this->belongsTo('App\Sale');
     }
 }
