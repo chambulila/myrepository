@@ -23,8 +23,13 @@ class SaleController extends Controller
     public function index()
     {
         $sales = Sale::all();
-        $SaleDetails = SaleDetail::all();
-        // $SaleDetails = DB::select('select * from sale_details left join items on items.id = sale_details.item_id');
+        $SaleDetails = SaleDetail::all(); 
+        //  $SaleDetails = DB::select('SELECT *
+        //  FROM sale_details
+        //  WHERE id = ANY
+        //    (SELECT id
+        //    FROM items);');
+        
         
         return view('sale.index', compact(['sales', 'SaleDetails']));
     }
@@ -119,7 +124,7 @@ class SaleController extends Controller
      */
     public function edit($id)
     {
-        $SaleDetails =  Sale::find($id);
+        $SaleDetails =  SaleDetail::find($id);
 
         return view('sale.edit', compact('SaleDetails'));
     }

@@ -24,10 +24,11 @@
                             <tr>
                                 <th>#</th>
                                 <th>Item</th>
-                                <th>Quantity of items</th>
+                                <th>Items Qty</th>
                                 <th>Price</th>
                                 <th>Discount</th>
                                 <th>Sold amount</th>
+                                <th>Customer</th>
                                 <th>Date of issue</th>
                                 <th>Action</th>
                             </tr> 
@@ -36,11 +37,12 @@
                             @foreach ($SaleDetails as $SaleDetail)
                             <tr>
                                 <td scope="row">{{$loop->iteration}}</td>
-                                <td>{{$SaleDetail->name}}</td>
+                                <td>{{$SaleDetail->item->name ?? ''}}</td>
                                 <td>{{$SaleDetail->quantity}}</td>
                                 <td>{{ $SaleDetail->unitprice }}</td>
                                 <td>{{$SaleDetail->discount}}</td>
                                 <td>{{$SaleDetail->amount}}</td>
+                                <td>{{ $SaleDetail->sale->customer_name }}</td>
                                 <td>{{$SaleDetail->created_at}}</td>
                                 <td>
                                     <a href="{{ route('sale.edit', $SaleDetail->id)}}" class="btn btn-primary btn-sm">Edit</a>

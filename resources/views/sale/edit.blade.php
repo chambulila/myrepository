@@ -37,7 +37,7 @@
                                
                                 <div class="form-group">
                                     <label for="">Item</label>
-                                    <input type="text" class="form-control" name="item" value="{{  $SaleDetails->item }}" placeholder="">
+                                    <input type="text" class="form-control" name="item" value="{{  $SaleDetails->item->name ?? '' }}" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="">SQuantity</label>
@@ -45,11 +45,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">date</label>
-                                    <input type="text" class="form-control" name="date" value="{{ $SaleDetails->date}}" placeholder="">
+                                    <input type="text" class="form-control" name="created_at" value="{{ $SaleDetails->created_at}}" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Customer</label>
-                                    <input type="text" class="form-control" name="customer" value="{{ $SaleDetails->customer }}" placeholder="">
+                                    <input type="text" class="form-control" name="customer_name" value="{{ $SaleDetails->customer_name }}" placeholder="">
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">Save</button>

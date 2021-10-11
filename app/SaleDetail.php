@@ -11,15 +11,18 @@ class SaleDetail extends Model
         'item_id', 'amount', 'unitprice', 'sale_id', 'quantity', 'discount'
     ];
 
-    public function items()
+    protected $with =['item'];
+
+    public function item()
     {
-        return $this->belongsTo('App\Item');
+        return $this->belongsTo(Item::class, 'item_id');
     }
 
     public function sale()
     {
         return $this->belongsTo('App\Sale');
     }
+    
     public function Transaction()
     {
         return $this->hasMany('App\Transaction');
