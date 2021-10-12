@@ -20,18 +20,20 @@
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
     <style>
-        #bodyy{
+        #bodyy {
             background: rgb(238, 240, 206);
         }
-        #navbar{
-            
+
+        #navbar {
+
             min-height: 100%;
             padding-top: 0px;
             margin-top: 0%;
             background-color: rgb(12, 12, 12);
 
         }
-        #footerr{
+
+        #footerr {
             glyph-orientation-vertical: 100turn;
             background-color: rgba(7, 7, 7, 0.959);
         }
@@ -45,7 +47,8 @@
             max-width: 30px;
             max-height: 30px;
         }
-        #h11{
+
+        #h11 {
             color: rgb(170, 112, 25);
         }
 
@@ -55,11 +58,14 @@
 
 <body id="bodyy">
     <div id="app">
-        
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
-            
+
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+
             <div class="container position-static">
-                <h1><marquee behavior="slide" direction="vertical" id="h11"> Sales and Inventory Management System</marquee> </h1>
+                <h1>
+                    <marquee behavior="slide" direction="vertical" id="h11"> Sales and Inventory Management System
+                    </marquee>
+                </h1>
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Laravel') }} --}}
                 </a>
@@ -96,7 +102,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
+                                                                         document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -120,7 +126,7 @@
 
                     <div class="profile">
                         <div class="row">
-                            <div class="col-2" >
+                            <div class="col-2">
 
                                 <nav id="navbar" class="nav-menu navbar">
 
@@ -142,17 +148,24 @@
                                         <li><a href="{{ route('sale.index') }}" class="nav-link scrollto"><i
                                                     class="fa fa-coins"></i>
                                                 <span>sales</span></a></li>
-                                        <li><a href="#" class="nav-link scrollto"><i class="fa fa-book"></i>
+                                        <li><a href="#demo" data-toggle="collapse" class="nav-link scrollto"><i
+                                                    class="fa fa-book"></i>
                                                 <span>Report</span></a></li>
-                                       
+
+                                        <div id="demo" class="collapse">
+                                            <a href="{{ route('salesreport') }}">Sales</a><br>
+                                            <a href="#">Purchases</a>
+                                        </div>
+
                                         <li><a href="{{ route('purchase.index') }}" class="nav-link scrollto"><i
                                                     class="fa fa-toggle-off"></i>
                                                 <span>Purchase</span></a></li>
 
-                                                <li>
-                                                    <a href="{{ route('register') }}" style="text-decoration: none"><i class="fa fa-users"></i><span>Add user</span></a>
-                                                </li> 
-                                   
+                                        <li>
+                                            <a href="{{ route('register') }}" style="text-decoration: none"><i
+                                                    class="fa fa-users"></i><span>Add user</span></a>
+                                        </li>
+
                                     </ul>
                                 </nav><!-- .nav-menu -->
                             </div>
@@ -164,14 +177,14 @@
                             </div>
 
                         </div>
-                    
+
                     </div>
                     <div id="footerr">
-            
+
                         @include('layouts.footer')
                     </div>
             </header><!-- End Header -->
-        
+
         </main>
     </div>
     <script src="{{ asset('js/jquery.min.js') }}"></script>

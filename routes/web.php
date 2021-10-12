@@ -30,3 +30,7 @@ Route::resource('/sale', 'SaleController');
 Route::resource('/supplier', 'SupplierController');
 Route::resource('/purchase', 'PurchaseController');
 Route::get('/a', 'SupplierController@a')->name('a');
+Route::resource('/testing', 'TestingController');
+Route::get('/report', 'ReportController@index')->name('salesreport');
+Route::post('/filterByDate', 'ReportController@filterByDate')->name('filterByDate');
+Route::get('/getPDF', 'ReportController@getPDF')->name('getPDF');

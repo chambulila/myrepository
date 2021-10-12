@@ -35,7 +35,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $notify = DB::select('select * from items having quantity = reorder');
+        $notify = DB::select('select * from items having quantity <= reorder');
         $notifyCount = count($notify);
 
         $purchases = Purchase::all();
