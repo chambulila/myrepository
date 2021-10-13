@@ -46,8 +46,6 @@
                                 <td>{{$SaleDetail->created_at}}</td>
                                 <td>
                                     <a href="{{ route('sale.edit', $SaleDetail->id)}}" class="btn btn-primary btn-sm">Edit</a>
-
-                                    <button type="button" onclick="onDeleteInfo('{{$SaleDetail->id}}')" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModel">Delete</button>
                                 </td>
                             </tr>
                             @endforeach

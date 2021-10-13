@@ -6,25 +6,43 @@ use Illuminate\Http\Request;
 use DB;
 use App\SaleDetail;
 use PDF;
+use App\Item;
 
 class ReportController extends Controller
 {
     public function index()
     {
-        return view('reports.salesreport');
+        return view('reports.sales.salesreport');
     }
 
-    public function filterByDate(Request $request)
+    public function filterBy(Request $request)
     {
+       if($request->has('from')){
         $this->validate($request, [
-           'from'=>'required',
-           'to'=>'required'
-        ]);
-        $from = $request->from;
-        $to = $request->to;
+            'from'=>'required',
+            'to'=>'required'
+         ]);
+         $from = $request->from;
+         $to = $request->to;
+ 
+        $byDate = SaleDetail::all()->whereBetween('created_at', array($from, $to));
+        return view('reports.sales.reportOfSales', compact(['byDate','from','to']));
+       }
+       elseif($request->has('item')){
+            $this->validate($request, [
+                'item' => 'required'
+            ]);
 
-       $byDate = SaleDetail::all()->whereBetween('created_at', array($from, $to));
-       return view('reports\reportOfSales', compact(['byDate','from','to']));
+            
+            $item_name = $request->post('item');
+            // $sales = DB::select('select * from sale_details having item_id in
+            // (
+            //     select id from items where items.name=$item_name)
+            //     ');
+            //     dd($sales);
+            echo "Still in progress!!";
+
+       }
     }
 
     public function getPDF()
@@ -32,7 +50,7 @@ class ReportController extends Controller
         $from = request()->get('from');
         $to = request()->get('to');
         $sales = SaleDetail::all()->whereBetween('created_at', array($from, $to));
-        $pdf = PDF::loadView('reports.pdf', compact('sales'));
+        $pdf = PDF::loadView('reports.sales.pdf', compact('sales'));
         return $pdf->download('sales-report.pdf');
     }
 }

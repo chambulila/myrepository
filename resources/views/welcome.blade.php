@@ -61,10 +61,21 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            h1{
+                color: rgb(66, 148, 148);
+                font-size: 60px;
+            }
+            h2{
+                margin-left: 25%;
+            }
+            .bodyy{
+                    background-color: #cecdba;
+            }
+         
         </style>
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">
+    <body class="bodyy">
+        <div class="flex-center position-ref full-height" id="divv">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -77,24 +88,17 @@
                         @endif
                     @endauth
                 </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="card-heading" >
+                            <h1>Entersoft Systems Company Limited</h1>
+                        </div>
+                        <div class="ml-4">
+                            <h2 class="text-center">Sales and Inventory management system</h2>
+                        </div>
+                    </div>
+                </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
         </div>
     </body>
 </html>
