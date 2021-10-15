@@ -34,3 +34,4 @@ Route::resource('/testing', 'TestingController');
 Route::get('/report', 'ReportController@index')->name('salesreport');
 Route::post('/filterBy', 'ReportController@filterBy')->name('filterBy');
 Route::get('/getPDF', 'ReportController@getPDF')->name('getPDF');
+Route::get('/namePDF', 'ReportController@getPDF')->name('namePDF');
