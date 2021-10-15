@@ -35,13 +35,13 @@ class ReportController extends Controller
 
             
             $item_name = $request->post('item');
-            // $sales = DB::select('select * from sale_details having item_id in
-            // (
-            //     select id from items where items.name=$item_name)
-            //     ');
-            //     dd($sales);
-            echo "Still in progress!!";
+            $sales = DB::table('sale_details')->where(function ($query) use ($item_name) {
+                $query->whereIn('item_id', function($queryy) use ($item_name){
+                    $queryy->select('id')->from('items')->where('items.name', $item_name);
+                });
+            })->get();
 
+            return view('reports.sales.byName', compact(['sales', 'item_name']));
        }
     }
 

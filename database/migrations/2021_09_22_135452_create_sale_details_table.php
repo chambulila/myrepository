@@ -17,6 +17,7 @@ class CreateSaleDetailsTable extends Migration
             $table->id();
             $table->string('sale_id');
             $table->string('item_id');
+            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
             $table->string('quantity');
             $table->string('unitprice');
             $table->string('amount');
